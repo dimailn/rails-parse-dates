@@ -11,14 +11,14 @@ POSTFIXES = [
   'Date'
 ]
 
-export default (entity) ->
+export default (entity, factory = moment) ->
   parsedEntity = {}
 
   iterator = new RecursiveIterator(entity)
 
   for {node, path} from iterator
     if (POSTFIXES.some((p) -> ///\w+#{p}///.test(path[path.length - 1]))) && typeof node is 'string'
-      node = moment(node)
+      node = factory(node)
     set(parsedEntity, path, node)
 
   parsedEntity
