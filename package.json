@@ -12,7 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.11",
-    "moment": "^2.22.2",
     "recursive-iterator": "^2.0.3"
   },
   "devDependencies": {

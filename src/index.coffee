@@ -1,9 +1,6 @@
 import {cloneDeep, set, get} from 'lodash'
 import RecursiveIterator from 'recursive-iterator'
 
-import moment from 'moment'
-
-
 POSTFIXES = [
   'On'
   'At'
@@ -11,7 +8,7 @@ POSTFIXES = [
   'Date'
 ]
 
-export default (entity, factory = moment) ->
+export default (entity, factory = (date) -> new Date(date)) ->
   parsedEntity = {}
 
   iterator = new RecursiveIterator(entity)
